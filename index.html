@@ -1,28 +1,1196 @@
-<div class="section" id="contact">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Historia de Cuba - 9no Grado</title>
+    <style>
+        :root {
+            --color-primary: #8B0000;
+            --color-secondary: #6b0000;
+            --color-text: #333;
+            --color-bg: #f5f5f5;
+            --color-container: white;
+            --color-border: #ddd;
+            --color-table-header: #8B0000;
+            --color-table-header-text: white;
+            --color-table-row-even: #f2f2f2;
+            --color-conclusion-bg: #f8f8f8;
+            --color-link: #0066cc;
+        }
+
+        [data-theme="dark"] {
+            --color-primary: #ff6b6b;
+            --color-secondary: #cc4d4d;
+            --color-text: #f0f0f0;
+            --color-bg: #121212;
+            --color-container: #1e1e1e;
+            --color-border: #444;
+            --color-table-header: #6b0000;
+            --color-table-header-text: #f0f0f0;
+            --color-table-row-even: #2a2a2a;
+            --color-conclusion-bg: #2a2a2a;
+            --color-link: #4da6ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--color-container);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--color-primary);
+            text-align: center;
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            transition: color 0.3s;
+        }
+
+        h2 {
+            color: var(--color-primary);
+            margin-top: 40px;
+            border-left: 5px solid var(--color-primary);
+            padding-left: 15px;
+            font-size: 1.8em;
+            transition: color 0.3s;
+        }
+
+        h3 {
+            color: var(--color-secondary);
+            margin-top: 25px;
+            font-size: 1.4em;
+            transition: color 0.3s;
+        }
+
+        h4 {
+            color: var(--color-text);
+            margin-top: 20px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table, th, td {
+            border: 1px solid var(--color-border);
+            transition: border-color 0.3s;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--color-table-header);
+            color: var(--color-table-header-text);
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--color-table-row-even);
+            transition: background-color 0.3s;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            padding-left: 5px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        ul li:before {
+            content: "•";
+            color: var(--color-primary);
+            position: absolute;
+            left: 0;
+        }
+
+        ol {
+            counter-reset: item;
+        }
+
+        ol li {
+            counter-increment: item;
+        }
+
+        ol li:before {
+            content: counter(item) ".";
+            color: var(--color-primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .conclusion {
+            background-color: var(--color-conclusion-bg);
+            padding: 20px;
+            border-left: 5px solid var(--color-primary);
+            margin: 30px 0;
+            border-radius: 0 5px 5px 0;
+            transition: background-color 0.3s;
+        }
+
+        .author {
+            text-align: right;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--color-text);
+            opacity: 0.8;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--color-border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 80px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--color-primary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider:after {
+            content: '☀️';
+            position: absolute;
+            left: 3px;
+            top: 2px;
+            font-size: 18px;
+        }
+
+        input:checked + .slider:after {
+            content: '🌙';
+            left: 31px;
+        }
+
+        .theme-label {
+            color: var(--color-text);
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        a {
+            color: var(--color-link);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background-color: rgba(139, 0, 0, 0.1);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 30px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: var(--color-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 30px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            border: 3px solid var(--color-container);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--color-primary);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content {
+            background-color: var(--color-conclusion-bg);
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+        }
+
+        .person-card {
+            background-color: var(--color-conclusion-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .person-name {
+            color: var(--color-primary);
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 5px;
+        }
+
+        .person-details {
+            margin-left: 15px;
+        }
+
+        .person-details ul {
+            margin-top: 10px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 25px 0;
+        }
+
+        .comparison-table th {
+            text-align: center;
+        }
+
+        .comparison-table td {
+            vertical-align: top;
+        }
+
+        .nav-menu {
+            position: fixed;
+            left: -300px;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background-color: var(--color-container);
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 90;
+            overflow-y: auto;
+            transition: left 0.3s ease;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-menu h3 {
+            margin-top: 0;
+            color: var(--color-primary);
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu li {
+            margin-bottom: 8px;
+            padding-left: 0;
+        }
+
+        .nav-menu li:before {
+            content: none;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(139, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color-text);
+        }
+
+        .contact-section {
+            background-color: var(--color-conclusion-bg);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            border-bottom: none;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            color: var(--color-primary);
+        }
+
+        .header-contact {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .header-contact a {
+            margin-left: 15px;
+            padding: 8px 15px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .header-contact a:hover {
+            background-color: var(--color-secondary);
+            text-decoration: none;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 80;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                width: 250px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header-contact {
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            .theme-switch {
+                right: 70px;
+                top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    
+    <div class="overlay" id="overlay"></div>
+    
+    <nav class="nav-menu" id="navMenu">
+        <h3>Índice</h3>
+        <ul>
+            <li><a href="#section1">1. Sociedades Comunitarias</a></li>
+            <li><a href="#section2">2. Rasgos distintivos</a></li>
+            <li><a href="#section3">3. Manifestaciones de rebeldía</a></li>
+            <li><a href="#section5">5. Corrientes ideológicas</a></li>
+            <li><a href="#section6">6. Ideario martiano</a></li>
+            <li><a href="#section7">7. Guerra de los Diez Años</a></li>
+            <li><a href="#section9">9. Asambleas</a></li>
+            <li><a href="#section10">10. Martí</a></li>
+            <li><a href="#section17">17. Mujeres cubanas</a></li>
+            <li><a href="#section19">19. Enmienda Platt</a></li>
+            <li><a href="#section21">21. Movimientos obreros</a></li>
+            <li><a href="#section22">22. Escritos de Martí</a></li>
+            <li><a href="#section23">23. Ejército Rebelde</a></li>
+            <li><a href="#section24">24. Medidas revolucionarias</a></li>
+            <li><a href="#section26">26. Logros revolucionarios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="theme-switch">
+        <span class="theme-label" id="themeLabel">Modo Oscuro</span>
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="container">
+        <h1>GUÍA COMPLETA DE HISTORIA DE CUBA</h1>
+        <p class="author">Autor: Fabiano García Valladares</p>
+        
+        <!-- Sección 1 -->
+        <div class="section" id="section1">
+            <h2>1. Sociedades Comunitarias. Comparación.</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Aspectos</th>
+                    <th>Pre-Agroalfareros</th>
+                    <th>Agroalfareros</th>
+                </tr>
+                <tr>
+                    <td><strong>Aspecto físico</strong></td>
+                    <td>Eran hombres rudos de estatura media, cara ancha, pómulos salientes y órbitas cuadradas</td>
+                    <td>Eran hombres, piel ligeramente oscura, pómulos salientes y nariz aguileña; tenían como norma deformarse el cráneo desde los primeros meses de nacido.</td>
+                </tr>
+                <tr>
+                    <td><strong>Instrumentos de trabajo</strong></td>
+                    <td>Eran confeccionados de piedra, madera y conchas, pero toscos, rústicos y rudimentarios.</td>
+                    <td>Eran confeccionados de piedra, madera y conchas y hueso, con un mejor acabado y más perfeccionamiento.</td>
+                </tr>
+                <tr>
+                    <td><strong>Actividades económicas</strong></td>
+                    <td>Realizaban la recolección, caza y pesca</td>
+                    <td>Realizaban la agricultura y la confección de objetos de cerámica, además de la recolección, caza y pesca.</td>
+                </tr>
+                <tr>
+                    <td><strong>Manifestaciones religiosas</strong></td>
+                    <td>-</td>
+                    <td>
+                        <ul>
+                            <li>El areito parece haber sido una de esas ceremonias religiosas de carácter colectivo</li>
+                            <li>Los hombres utilizaban taparrabos para las ceremonias religiosas</li>
+                            <li>Pintaban sus cuerpos con rayas y círculos.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            
+            <div class="conclusion">
+                <h3>Conclusiones:</h3>
+                <p>El grupo de mayor desarrollo son los agroalfareros, ya que sus instrumentos de trabajo tenían un mejor acabado y mayor perfeccionamiento, y además se dedicaban a la agricultura, a la confección de objetos de cerámica, a la recolección, caza y pesca; mientras los pre-agroalfareros tenían instrumentos de trabajo más toscos, rústicos y rudimentarios, y se dedicaban solamente a la recolección, caza y pesca. En cuanto a las manifestaciones religiosas, en los agroalfareros el areíto es la ceremonia religiosa fundamental.</p>
+            </div>
+        </div>
+        
+        <!-- Sección 2 -->
+        <div class="section" id="section2">
+            <h2>2. Rasgos distintivos o semejanzas de ambos grupos</h2>
+            <ul>
+                <li>Vivían en comuna</li>
+                <li>El fruto de su trabajo se lo repartían en partes iguales</li>
+                <li>Trabajo colectivo</li>
+                <li>No existían las clases sociales</li>
+            </ul>
+        </div>
+        
+        <!-- Sección 3 -->
+        <div class="section" id="section3">
+            <h2>3. Manifestaciones de rebeldía</h2>
+            
+            <div class="person-card">
+                <div class="person-name">Sublevación de Hatuey</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Entre los indios que pudieron huir de La Española se encontraba el cacique Hatuey.</li>
+                        <li>Pudo reunir cerca de 300 hombres contra los españoles, pero la lucha era muy desigual.</li>
+                        <li>Hatuey fue juzgado como hereje y rebelde, y fue condenado a morir quemado en la hoguera.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Cimarrones y palenques</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Se escapaban de las propiedades de los españoles.</li>
+                        <li>Vivían en montañas y bosques.</li>
+                        <li>Los ponían a trabajar en la producción agrícola.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Sublevación de Guamá</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Desde 1522 a 1533, los indios dirigidos por Guamá, dominaron las montañas de Baracoa y atacaban las propiedades españolas, las labranzas eran destruidas y fue incendiado el poblado de Baracoa.</li>
+                        <li>Fueron vencidos debido a la superioridad de las armas de los españoles.</li>
+                        <li>El odio a la explotación y el amor de los indios a la libertad, continuará viviendo en las montañas de Baracoa.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Sublevación de los vegueros</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Los vegueros se sublevaron en varias ocasiones, en 1717, en 1720 y 1723</li>
+                        <li>No triunfaron, pero las sublevaciones que protagonizaron quedaron en la historia de Cuba como un ejemplo de la valentía del pueblo en su lucha contra los abusos y la explotación.</li>
+                        <li>Las autoridades españolas tuvieron que suspender las medidas de estanco por obligación.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 5 -->
+        <div class="section" id="section5">
+            <h2>5. Corrientes ideológicas en Cuba en la 1ra mitad del siglo XIX</h2>
+            
+            <h3>Reformismo</h3>
+            <table>
+                <tr>
+                    <th>Etapas</th>
+                    <th>Representantes</th>
+                    <th>Demandas o aspiraciones</th>
+                    <th>Resultados</th>
+                </tr>
+                <tr>
+                    <td><strong>1810-1825</strong></td>
+                    <td>Francisco de Arango y Parreño</td>
+                    <td>
+                        <p><strong>Aspecto económico:</strong> Libertad de comercio.</p>
+                        <p><strong>Aspecto Político:</strong> Autonomía como forma de gobierno, es decir, que los criollos participaran en el gobierno de la Isla, ocupando cargos públicos o políticos.</p>
+                        <p><strong>Aspecto social:</strong> Aspiraban al mantenimiento de la esclavitud.</p>
+                    </td>
+                    <td>España no concedió la asimilación u autonomía.</td>
+                </tr>
+                <tr>
+                    <td><strong>1830-1837</strong></td>
+                    <td>José Antonio Saco, Domingo del Monte, José de la Luz y Caballero</td>
+                    <td>
+                        <p><strong>Aspecto económico:</strong> Supresión de las barreras arancelarias para identificar el tráfico comercial.</p>
+                        <p><strong>Aspecto político:</strong> Creación de un gobierno autónomo en Cuba que formara parte del Estado Español.</p>
+                        <p><strong>Aspecto social:</strong> Abolición de la esclavitud gradualmente. Fomentar la emigración blanca y promover la instrucción pública.</p>
+                    </td>
+                    <td>La mitad de los intereses que lograron en torno a sus demandas contribuyen a la nacionalidad cubana.</td>
+                </tr>
+                <tr>
+                    <td><strong>1861-1863</strong></td>
+                    <td>José Morales Lenus, Francisco Frías, Miguel Aldama</td>
+                    <td>
+                        <p><strong>Aspecto económico:</strong> Rebaja de aranceles para poder efectuar un comercio libre, sobre todo con Estados Unidos y reducción de impuestos.</p>
+                        <p><strong>Aspecto político:</strong> Asimilación o autonomía</p>
+                        <p><strong>Aspecto social:</strong> Abolición gradual de la esclavitud.</p>
+                    </td>
+                    <td>Se frenó la tecnificación azucarera. Se le sacó partido a la esclavitud.</td>
+                </tr>
+            </table>
+            
+            <h3>Independentismo</h3>
+            <div class="person-card">
+                <div class="person-name">Félix Varela</div>
+                <div class="person-details">
+                    <p><strong>Carácter:</strong></p>
+                    <ul>
+                        <li>Político</li>
+                        <li>Revolucionario</li>
+                        <li>Patriótico</li>
+                    </ul>
+                    <p><strong>Objetivos:</strong></p>
+                    <ul>
+                        <li>Lograr la independencia de Cuba</li>
+                        <li>Abolir la esclavitud</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Anexionismo</h3>
+            <div class="person-card">
+                <div class="person-name">Narciso López</div>
+                <div class="person-details">
+                    <p><strong>Carácter:</strong></p>
+                    <ul>
+                        <li>Mezquino</li>
+                        <li>Antipatriótico</li>
+                        <li>Negativo</li>
+                        <li>Anticubano</li>
+                    </ul>
+                    <p><strong>Objetivos:</strong></p>
+                    <ul>
+                        <li>Intereses económicos</li>
+                        <li>Afán de mantener la esclavitud</li>
+                        <li>Deseaban que Cuba dejase de pertenecer a España para pertenecer a los E.E.U.U.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 6 -->
+        <div class="section" id="section6">
+            <h2>6. Vigencia del ideario martiano</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Independentismo</h4>
+                        <p>Poema "Abdala"</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Antimperialismo</h4>
+                        <p>Carta a su amigo Manuel Mercado</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Latinoamericanismo</h4>
+                        <p>"(...) ¿A dónde va la América...?"</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Antirracismo</h4>
+                        <p>Poema "Mi raza"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 7 -->
+        <div class="section" id="section7">
+            <h2>7. Causas que condujeron al estallido de la Guerra de los Diez Años</h2>
+            <ul>
+                <li>Agudización de las contradicciones colonia-metrópoli</li>
+                <li>Necesidad de abolir la esclavitud</li>
+                <li>Creciente desarrollo de un movimiento nacional</li>
+                <li>Las declaraciones políticas de España</li>
+            </ul>
+        </div>
+        
+        <!-- Sección 9 -->
+        <div class="section" id="section9">
+            <h2>9. Asambleas de Guáimaro y Jimaguayú</h2>
+            
+            <div class="person-card">
+                <div class="person-name">Asamblea de Guáimaro</div>
+                <div class="person-details">
+                    <p><strong>Objetivos fundamentales:</strong></p>
+                    <ul>
+                        <li>Lograr la unidad entre los revolucionarios</li>
+                        <li>Establecer un gobierno</li>
+                    </ul>
+                    
+                    <p><strong>Participantes:</strong></p>
+                    <ul>
+                        <li>Carlos M. de Céspedes</li>
+                        <li>Salvador Cisneros Betancourt</li>
+                        <li>Ignacio Agramonte y Loynaz</li>
+                        <li>Manuel Quesada</li>
+                    </ul>
+                    
+                    <p><strong>Resultados:</strong></p>
+                    <ul>
+                        <li>Se aprobó la división de la isla en 4 Estados: Occidente, Las Villas, Camagüey y Oriente.</li>
+                        <li>Se determinó la abolición inmediata de la esclavitud.</li>
+                        <li>Se tomó como bandera de la República, la utilizada por Narciso López y que la de Céspedes, quedara situada presidiendo permanentemente la sala de sesiones de la Cámara.</li>
+                    </ul>
+                    
+                    <p><strong>Importancia histórica:</strong></p>
+                    <ul>
+                        <li>Dio oportunidad a los insurrectos de discutir sus ideas y de intercambiar opiniones.</li>
+                        <li>Puso de manifiesto que en los patriotas que dirigían las lucha, estaba el interés de la patria por encima de recelos, discrepancias y personalismos.</li>
+                        <li>Demostró que solo a través de la más estrecha unidad podría alcanzarse la victoria.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Asamblea de Jimaguayú</div>
+                <div class="person-details">
+                    <p><strong>Objetivos fundamentales:</strong></p>
+                    <ul>
+                        <li>Reorganizar la lucha</li>
+                        <li>Aprobar la Constitución y elegir un Gobierno.</li>
+                    </ul>
+                    
+                    <p><strong>Participantes:</strong></p>
+                    <ul>
+                        <li>Salvador Cisneros B.</li>
+                        <li>Bartolomé Masó</li>
+                        <li>Carlos Roloff</li>
+                        <li>Máximo Gómez B.</li>
+                        <li>Antonio Maceo G.</li>
+                    </ul>
+                    
+                    <p><strong>Resultados:</strong></p>
+                    <ul>
+                        <li>Adoptó el ordenamiento apropiado para las condiciones de la guerra.</li>
+                        <li>Fue un reflejo de madurez y profundización del pensamiento revolucionario.</li>
+                        <li>Demostró que la Guerra del 95 fue superior a la del 68.</li>
+                    </ul>
+                    
+                    <p><strong>Importancia histórica:</strong></p>
+                    <ul>
+                        <li>Recogió las experiencias de la de Guáimaro y las ideas centrales del Manifiesto de Montecristi</li>
+                        <li>A diferencia de la de Guáimaro, logró el equilibrio necesario entre los factores políticos y militares.</li>
+                        <li>Fue de gran importancia en la consolidación y desarrollo del movimiento revolucionario cubano.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="conclusion">
+                <h3>¿Por qué la Asamblea de Jimaguayú fue superior a la de Guáimaro?</h3>
+                <p>La Asamblea de Jimaguayú se desarrolló el 16 de septiembre de 1895. En ella supieron encontrar formas adecuadas para superar el viejo debate civil y militar iniciado en Guáimaro. Se organizó debidamente para las condiciones de la guerra. Se estableció un Consejo de Gobierno con facultades administrativas y legislativas dando autonomía al mando militar, mientras que, en Guáimaro, se creó un gobierno civil dirigido por Agramonte que dependía del ejército, la asamblea tenía una vigencia de dos años y para sustituirla había que convocar una Asemblea de Representantes. La Asamblea de Jimaguayú fue un reflejo de madurez y profundización del pensamiento revolucionario, demostró que la Guerra del 95 fue superior a la del 68.</p>
+            </div>
+        </div>
+        
+        <!-- Sección 10 -->
+        <div class="section" id="section10">
+            <h2>10. Labor unificadora de Martí</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">1879</div>
+                    <div class="timeline-content">
+                        <p>Martí llega a España deportado nuevamente, desde donde escapó hacia los Estados Unidos para continuar su labor revolucionaria.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1881</div>
+                    <div class="timeline-content">
+                        <p>Viaja a Caracas donde funda la Revista Venezolana, nueva Tribuna de sus ideas políticas y vehículo de cultura latinoamericana.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1882-1895</div>
+                    <div class="timeline-content">
+                        <p>En Nueva York denunció la opresión que sufría la patria y señaló los errores y los aciertos de la Guerra de los Diez Años. Fundó el Partido Revolucionario Cubano y preparó la Guerra Necesaria.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 17 -->
+        <div class="section" id="section17">
+            <h2>17. Papel destacado de la mujer cubana</h2>
+            
+            <div class="person-card">
+                <div class="person-name">Mariana Grajales</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Madre de los Maceo.</li>
+                        <li>Se incorporó a la guerra y era un soldado más, atendía a los enfermos, curaba a los heridos, transportaba armas, etc.</li>
+                        <li>La mayoría de los hijos y el esposo de Mariana murieron en el combate, pero nada la hizo abandonar los campos de batalla.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Bernarda Toro Pelegrín</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Era esposa de Máximo Gómez, curaba a los heridos y enfermos de los hospitales de campaña</li>
+                        <li>Firme y abnegada, estuvo junto al Ejército Libertador hasta que terminó la Guerra.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Ana Betancourt</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Escribió un documento que fue leído en la Asamblea de Guáimaro por Ignacio Agramonte en el que pedía que se concediera a las mujeres la igualdad de derechos</li>
+                        <li>Considerada pionera del feminismo en Cuba</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 19 -->
+        <div class="section" id="section19">
+            <h2>19. La reacción popular frente a la Enmienda Platt</h2>
+            
+            <h3>1. ¿Por qué Cuba se convertiría en un país independiente atado al dominio imperialista?</h3>
+            <p>Ya que en sus artículos se expresaba:</p>
+            <ul>
+                <li><strong>Artículo III:</strong> Que el gobierno de Cuba consintiera que los E.E.U.U pudieran intervenir para la conservación de la independencia cubana</li>
+                <li><strong>Artículo VI:</strong> Que la Isla de Pinos sería omitida de los límites de Cuba propuestos por la Constitución.</li>
+                <li><strong>Artículo VII:</strong> Que el gobierno de Cuba vendería o arrendaría a los E.E.U.U. las tierras necesarias para estaciones navales o carboneras.</li>
+            </ul>
+            
+            <h3>2. Rechazo de Cuba a la Enmienda Platt</h3>
+            <ul>
+                <li>El pueblo expresó su repulsa mediante manifestaciones callejeras, mítines, artículos de prensa, reacciones públicas, etc.</li>
+                <li>Se vivieron momentos de verdadera agitación revolucionaria.</li>
+                <li>Las manifestaciones que sucedían se hicieron notar en todo el territorio nacional.</li>
+            </ul>
+            
+            <h3>3. Mecanismos de control yanqui sobre Cuba</h3>
+            
+            <div class="person-card">
+                <div class="person-name">Tratado de Reciprocidad Comercial (11/12/1902)</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Se firma dicho tratado y se pone en práctica un año después.</li>
+                        <li>Representó un elemento decisivo en la acentuación de los rasgos que deformaron la economía cubana</li>
+                        <li>Consistía en asegurar a los monopolios norteamericanos ventajas excepcionales en el mercado de Cuba</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Tratado de Bases Navales y Carboneras (16/02/1903)</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Los yanquis pidieron la concesión de 2 puertos en la costa norte: Bahía Honda y Nipe, y en 2 en la costa sur: Guantánamo y Cienfuegos.</li>
+                        <li>Estados Unidos tenía mucho interés en instalar bases navales, sobre todo en la Bahía de Guantánamo, que ocupaba una posición ventajosa y sería un factor que les permitiría dominar la zona del Caribe y paso hacia el Pacífico.</li>
+                        <li>Las zonas para las bases quedaron reducidas a 2: Guantánamo y Bahía Honda.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Tratado Permanente (11/05/1903, Artículo VIII)</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Determinaba las relaciones entre Cuba y los E.E.U.U.</li>
+                        <li>En él se reproducían textualmente los 7 primeros artículos de la Enmienda Platt. Los imperialistas aseguraban aún más su dominación sobre Cuba.</li>
+                        <li>El 20 de mayo de 1902 el gobierno norteamericano le impuso a Cuba una República formal. Cuba se había convertido en una neocolonia. La república era dependiente porque predominaba la corrupción, los monopolios extranjeros y los gobiernos títeres.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>4. Datos útiles:</h3>
+            <ul>
+                <li><strong>Redactor de la Enmienda Platt:</strong> Oliver Platt</li>
+                <li><strong>Figura principal que se opuso a la Enmienda Platt:</strong> Juan Gualberto Gómez</li>
+                <li><strong>20/05/1902:</strong> Surge la República Neocolonial. Quedamos atados de pies y manos a E.E.U.U. No teníamos soberanía ni independencia ni un himno declarado oficialmente.</li>
+            </ul>
+        </div>
+        
+        <!-- Sección 21 -->
+        <div class="section" id="section21">
+            <h2>21. Movimiento obrero, estudiantil y comunista (1920-1930)</h2>
+            
+            <h3>1. Movimiento Estudiantil</h3>
+            
+            <div class="person-card">
+                <div class="person-name">Julio A. Mella</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Participó en la Reforma Universitaria y convocó el Primer Congreso Nacional de Estudiantes.</li>
+                        <li>En 1924 forma parte de la agrupación comunista de La Habana.</li>
+                        <li>Junto a Baliño funda el Primer PCC formando parte de su Comité Central.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Rubén M. Villena (1899-1934)</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Protagoniza la Protesta de los Trece</li>
+                        <li>En 1923 funda junto a Mella la Universidad Popular José Martí, y unos meses después la Liga Antimperialista de Cuba.</li>
+                        <li>Fue el mentor de 2 resonantes huelgas contra la tiranía de Machado: La de marzo de 1930 y la de agosto de 1933</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Antonio Guiteras (1906-1935)</div>
+                <div class="person-details">
+                    <ul>
+                        <li>En 1927 participa en la manifestación estudiantil, como representante de la Facultad de Farmacia.</li>
+                        <li>Es invitado a formar parte del gobierno de los 100 días como secretario de Gobierno de Marina y Guerra, prestando una serie de medidas de carácter popular y antimperialista.</li>
+                        <li>Al caer dicho gobierno pasó a la clandestinidad, siendo entrevistado por la revista "Bohemia".</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>2. Movimiento Obrero</h3>
+            
+            <div class="person-card">
+                <div class="person-name">Jesús Menéndez</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Se destacó en la lucha contra Machado, donde fundó el sindicato nacional de obreros de la industria azucarera.</li>
+                        <li>Fue elegido representante de la cámara.</li>
+                        <li>Participó en la fundación de las CTC y logró que se aprobara el diferencial azucarero.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Lázaro Peña</div>
+                <div class="person-details">
+                    <ul>
+                        <li>Líder obrero conocido como "El Capitán del Pueblo"</li>
+                        <li>Secretario general de la Confederación de Trabajadores de Cuba (CTC)</li>
+                        <li>Defensor de los derechos de los trabajadores y de la unidad sindical</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 22 -->
+        <div class="section" id="section22">
+            <h2>22. Escritos patrióticos de José Martí</h2>
+            
+            <div class="person-card">
+                <div class="person-name">Céspedes (Visión Martiana)</div>
+                <div class="person-details">
+                    <ul>
+                        <li>"El ímpetu, es como el volcán que viene tremendo e imperfecto de las entrañas de la tierra."</li>
+                        <li>"Desafía con autoridad como de rey y con fuerza como de la luz."</li>
+                        <li>"El arrebato"</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Ignacio Agramonte (Visión Martiana)</div>
+                <div class="person-details">
+                    <ul>
+                        <li>"Vencedor"</li>
+                        <li>"La virtud"</li>
+                        <li>"El espacio azul que lo corona"</li>
+                        <li>"La purificación"</li>
+                        <li>"Sin más ciencia militar que el genio, organiza a la caballería, rehace Camagüey, combina y dirige ataques victoriosos."</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Mi raza</div>
+                <div class="person-details">
+                    <p>"El hombre no tiene ningún derecho especial porque pertenezca a una raza u otra: dígase hombre, y ya se dicen todos los derechos."</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 23 -->
+        <div class="section" id="section23">
+            <h2>23. Acciones victoriosas del Ejército Rebelde (1957-1958)</h2>
+            
+            <div class="person-card">
+                <div class="person-name">Batalla de Guisa (20-30/11/1958)</div>
+                <div class="person-details">
+                    <p><strong>Líder:</strong> Fidel Castro</p>
+                    <ul>
+                        <li>La más grande en el transcurso de la guerra.</li>
+                        <li>Marcó el inicio de la ofensiva final.</li>
+                        <li>Abrió definitivamente la marcha del primer combate o frente denominado José Martí.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Batalla de Yaguajay (22-31/12/1958)</div>
+                <div class="person-details">
+                    <p><strong>Líder:</strong> Camilo Cienfuegos</p>
+                    <ul>
+                        <li>Fue el colofón de una sucesión de victorias del comandante Camilo Cienfuegos.</li>
+                        <li>Puso fin a la campaña de Camilo en las Villas, que ahora debía dirigirse hacia Occidente para cumplir las órdenes de Fidel.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-name">Batalla de Santa Clara (29/12/1958)</div>
+                <div class="person-details">
+                    <p><strong>Líder:</strong> Ernesto "Che" Guevara</p>
+                    <ul>
+                        <li>Fue fundamental en la caída del tirano Batista.</li>
+                        <li>Estableció el dominio del Ejército Rebelde sobre las comunicaciones terrestres en el centro de la Isla.</li>
+                        <li>Abrió el camino hacia La Habana.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 24 -->
+        <div class="section" id="section24">
+            <h2>24. Primeras medidas del gobierno revolucionario</h2>
+            <ul>
+                <li>Fueron reintegrados a sus puestos de trabajo los obreros despedidos durante la tiranía.</li>
+                <li>El 3 de marzo se dispone la intervención de la llamada Compañía Cubana de Teléfonos, monopolio yanqui.</li>
+                <li>El 20 de agosto fueron rebajadas las tarifas eléctricas y del gas.</li>
+                <li>Se inició la Reforma Agraria que entregó la tierra a los campesinos.</li>
+                <li>Se inició la Campaña de Alfabetización para erradicar el analfabetismo.</li>
+            </ul>
+        </div>
+        
+        <!-- Sección 26 -->
+        <div class="section" id="section26">
+            <h2>26. Logros de la Revolución en diferentes sectores</h2>
+            
+            <h3>a) Educación</h3>
+            <ul>
+                <li>La Campaña de Alfabetización (1961) que redujo el analfabetismo a 3.9%.</li>
+                <li>Se crearon miles de escuelas y la nacionalización de la enseñanza.</li>
+                <li>Al finalizar la campaña de alfabetización se ofertaron a los brigadistas 40,000 becas.</li>
+                <li>Creación del sistema de becas para estudiantes de todos los niveles.</li>
+            </ul>
+            
+            <h3>b) Salud</h3>
+            <ul>
+                <li>Se crearon numerosas postas médicas y hospitales rurales, así como policlínicos y hospitales urbanos.</li>
+                <li>A partir de 1962 se desarrollaron las campañas nacionales de vacunación.</li>
+                <li>Aumentó el promedio de vida y disminuyó la mortalidad infantil.</li>
+                <li>Creación del Sistema Nacional de Salud gratuito y accesible para toda la población.</li>
+            </ul>
+            
+            <h3>c) Otras esferas</h3>
+            <ul>
+                <li>Desarrollo de instituciones culturales como el ICAIC, Casa de las Américas, Ballet Nacional de Cuba.</li>
+                <li>La práctica masiva del deporte con logros internacionales destacados.</li>
+                <li>La edición de millones de ejemplares de libros y promoción de la lectura.</li>
+                <li>Desarrollo científico con la creación de centros de investigación y formación de profesionales.</li>
+            </ul>
+        </div>
+
+        <div class="section" id="contact">
             <div class="contact-section">
                 <h2>Contáctame</h2>
                 <p>Si tienes alguna pregunta sobre esta guía o deseas más información, no dudes en contactarme.</p>
                 
                 <div class="contact-info">
                     <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <span>Email: fabiano@ejemplo.com</span>
-                    </div>
-                    <div class="contact-item">
                         <span class="contact-icon">📱</span>
-                        <span>Teléfono: +53 12345678</span>
+                        <span>Teléfono: +53 51002510</span>
                     </div>
                     <div class="contact-item">
                         <span class="contact-icon">🏫</span>
-                        <span>Escuela: Instituto Cubano de Historia</span>
+                        <span>Escuela: Guido Fuentes Jiménez</span>
                     </div>
-                </div>
-                
-                <p style="margin-top: 20px;">También puedes encontrarme en redes sociales:</p>
-                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
-                    <a href="#" style="padding: 8px 15px; background-color: #3b5998; color: white; border-radius: 4px;">Facebook</a>
-                    <a href="#" style="padding: 8px 15px; background-color: #1da1f2; color: white; border-radius: 4px;">Twitter</a>
-                    <a href="#" style="padding: 8px 15px; background-color: #0077b5; color: white; border-radius: 4px;">LinkedIn</a>
                 </div>
             </div>
         </div>

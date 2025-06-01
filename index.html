@@ -22,16 +22,16 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
+            line-height: 1.2;
             margin: 0;
-            padding: 0;
+            padding: 70px;
             background-color: var(--color-bg);
             color: var(--color-text);
             transition: background-color 0.3s, color 0.3s;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 440px;
             margin: 0 auto;
             background-color: var(--color-container);
             padding: 30px;
@@ -48,7 +48,7 @@
             border-bottom: 3px solid var(--color-primary);
             padding-bottom: 15px;
             margin-bottom: 30px;
-            font-size: 2.2em;
+            font-size: 1.5em;
             transition: color 0.3s;
         }
 
@@ -65,7 +65,7 @@
             color: var(--color-repair);
             text-align: center;
             margin-top: 40px;
-            font-size: 1.2em;
+            font-size: 1.0em;
             transition: color 0.3s;
         }
 
@@ -128,7 +128,7 @@
             background-color: var(--color-conclusion-bg);
             padding: 30px;
             border-radius: 8px;
-            margin: 40px 0;
+            margin: 0px 0;
             text-align: center;
         }
 
@@ -142,8 +142,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 12px;
         }
 
         .contact-item {
@@ -229,64 +229,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const currentTheme = localStorage.getItem('theme');
-        const themeLabel = document.getElementById('themeLabel');
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-        const overlay = document.getElementById('overlay');
-
-        // Event listeners
-        menuToggle.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
-
-        // Cerrar menú al hacer clic en un enlace (para móviles)
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        themeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                document.body.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeLabel.textContent = 'Modo Claro';
-            } else {
-                document.body.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                themeLabel.textContent = 'Modo Oscuro';
-            }
-        });
-
-        // Smooth scrolling para enlaces de navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 20,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Cerrar menú al cambiar el tamaño de la pantalla si es mayor a 768px
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
-    </script>
 </body>
 </html>
-
-<!-- Hidden text -->

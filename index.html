@@ -192,6 +192,15 @@
             display: block;
         }
 
+        .construction-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            height: auto;
+            filter: grayscale(0%) brightness(1.0);
+            margin-bottom: 30px;
+        }
+
         @media (max-width: 768px) {
             .contact-info {
                 flex-direction: column;
@@ -203,12 +212,19 @@
                 margin-top: 15px;
             }
             
+            .construction-image {
+                max-width: 150px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Guía No Disponible al Público</h1>
+        
+        <!-- Imagen añadida aquí -->
+        <img src="https://fabiano2510.github.io/guiahistoriacubapf/klipartz.com.png" alt="Sitio en construcción" class="construction-image">
+        
         <div class="section">
             <p class="repairinfo">En estos momentos está pagina web no está disponible públicamente, está disponible solo para desarrolladores. Estará disponible muy pronto 😉</p>
         </div>

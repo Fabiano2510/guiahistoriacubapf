@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+    <title>Guía en Desarrollo</title>
+    <style>
+        :root {
+            --color-primary: #6b9aff;
+            --color-secondary: #cc4d4d;
+            --color-repair: #ffffff;
+            --color-text: #f0f0f0;
+            --color-bg: #121212;
+            --color-container: #1e1e1e;
+            --color-border: #444;
+            --color-table-header: #6b0000;
+            --color-table-header-text: #f0f0f0;
+            --color-table-row-even: #2a2a2a;
+            --color-conclusion-bg: #2a2a2a;
+            --color-link: #4da6ff;
+            --color-success: #4CAF50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.2;
+            margin: 0;
+            padding: 30px;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 440px;
+            margin: 0 auto;
+            background-color: var(--color-container);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+            margin-top: 180px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--color-primary);
+            text-align: center;
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .repairinfo {
+            color: var(--color-repair);
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.0em;
+            transition: color 0.3s;
+        }
+
+        .access-button {
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+            display: block;
+            margin: 30px auto 0;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .access-button.active {
+            opacity: 1;
+            pointer-events: auto;
+            background-color: var(--color-primary);
+        }
+
+        .access-button.active:hover {
+            background-color: var(--color-secondary);
+        }
+
+        .construction-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            height: auto;
+            filter: grayscale(0%) brightness(1.0);
+            margin-bottom: 30px;
+        }
+
+        .dev-message {
+            background-color: rgba(107, 154, 255, 0.1);
+            border-left: 4px solid var(--color-primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+            text-align: center;
+        }
+
+        .countdown {
+            font-size: 0.9em;
+            color: var(--color-primary);
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin-top: 100px;
+            }
+            
+            .construction-image {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guía en Desarrollo</h1>
+        
+        <img src="https://fabiano2510.github.io/guiahistoriacubapf/klipartz.com.png" alt="Sitio en desarrollo" class="construction-image">
+        
+        <div class="dev-message">
+            <p>Esta guía está en desarrollo. Algunos contenidos pueden no estar disponibles pero se actualizarán con el tiempo. ¡Estén pendientes a estas actualizaciones!</p>
+            <div class="countdown" id="countdown">El botón estará disponible en 7 segundos...</div>
+        </div>
+
+        <button class="access-button" id="accessButton" onclick="redirectToGuide()">Acceder a la Guía</button>
+    </div>
+
+    <script>
+        function redirectToGuide() {
+            window.location.href = "R3XDrWFQcml2YWRhRGV2ZWxvcGVyc09ubHk3ODY1NDY=.html";
+        }
+
+        // Contador de 7 segundos
+        let seconds = 7;
+        const countdownElement = document.getElementById('countdown');
+        const accessButton = document.getElementById('accessButton');
+        
+        const countdownInterval = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = `El botón estará disponible en ${seconds} segundo${seconds !== 1 ? 's' : ''}...`;
+            
+            if (seconds <= 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = "¡El botón ya está disponible!";
+                accessButton.classList.add('active');
+                
+                // Ocultar el mensaje después de 2 segundos
+                setTimeout(() => {
+                    countdownElement.style.display = 'none';
+                }, 2000);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

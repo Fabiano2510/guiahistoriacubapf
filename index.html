@@ -153,67 +153,8 @@
         <img src="https://fabiano2510.github.io/guiahistoriacubapf/availablesoon.png" alt="Sitio en construcción" class="construction-image">
         
         <div class="section">
-            <p class="repairinfo">En estos momentos esta página web no está disponible públicamente. Ingresa el código de acceso privado para continuar.</p>
-        </div>
-
-        <div class="access-form">
-            <input type="password" class="access-input" placeholder="Ingresa el código secreto" id="accessCode">
-            <button class="access-button" onclick="checkAccess()">Acceder</button>
-            <div id="errorMessage" class="message error">Código incorrecto. Intenta nuevamente.</div>
-            <div id="successMessage" class="message success">¡Acceso concedido! Redirigiendo...</div>
+            <p class="repairinfo">En estos momentos esta página web no está disponible públicamente. Estará disponible para el día 4 de junio a las 12:01 pm</p>
         </div>
     </div>
-
-    <script>
-        // Código secreto (puedes cambiarlo)
-        const SECRET_CODE = "MjUxMDEw";
-        
-        function checkAccess() {
-            const inputCode = document.getElementById('accessCode').value;
-            const errorMessage = document.getElementById('errorMessage');
-            const successMessage = document.getElementById('successMessage');
-            
-            // Ocultar mensajes anteriores
-            errorMessage.style.display = 'none';
-            successMessage.style.display = 'none';
-            
-            if (inputCode === SECRET_CODE) {
-                // Código correcto
-                successMessage.style.display = 'block';
-                // Redirigir después de 1.5 segundos
-                setTimeout(() => {
-                    window.location.href = "R3XDrWFQcml2YWRhRGV2ZWxvcGVyc09ubHk3ODY1NDY=.html"; // Cambia esta URL por tu guía privada
-                }, 1500);
-            } else {
-                // Código incorrecto
-                errorMessage.style.display = 'block';
-                // Agitar el input para dar feedback
-                document.getElementById('accessCode').classList.add('shake');
-                setTimeout(() => {
-                    document.getElementById('accessCode').classList.remove('shake');
-                }, 500);
-            }
-        }
-        
-        // Permitir acceso con la tecla Enter
-        document.getElementById('accessCode').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkAccess();
-            }
-        });
-    </script>
-
-    <style>
-        /* Animación de agitación para el input */
-        .shake {
-            animation: shake 0.5s;
-        }
-        
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
-    </style>
 </body>
 </html>

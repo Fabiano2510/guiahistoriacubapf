@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
     <title>Guía de Historia de Cuba - 9no Grado PF</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
     <style>
         :root {
-            --color-primary: #0501ff;
+            --color-primary: #0178ff;
             --color-secondary: #3474ff;
             --color-text: #333;
-            --color-themeswitch: #1100ff;
+            --color-themeswitch: #0066ff;
             --color-bg: #f5f5f5;
             --color-container: white;
             --color-border: #ddd;
@@ -31,8 +31,8 @@
             --color-border: #444;
             --color-table-header: #00236e;
             --color-table-header-text: #f0f0f0;
-            --color-table-row-even: #2a2a2a;
-            --color-conclusion-bg: #2a2a2a;
+            --color-table-row-even: #292929;
+            --color-conclusion-bg: #1f1f1f;
             --color-link: #97cbff;
         }
 
@@ -48,7 +48,7 @@
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: auto auto;
             background-color: var(--color-container);
             padding: 30px;
             border-radius: 10px;
@@ -64,7 +64,7 @@
             border-bottom: 3px solid var(--color-primary);
             padding-bottom: 15px;
             margin-bottom: 30px;
-            font-size: 2.2em;
+            font-size: 1.8em;
             transition: color 0.3s;
         }
 
@@ -73,22 +73,27 @@
             margin-top: 40px;
             border-left: 5px solid var(--color-primary);
             padding-left: 15px;
-            font-size: 1.8em;
+            font-size: 1.4em;
             transition: color 0.3s;
         }
 
         h3 {
             color: var(--color-secondary);
             margin-top: 25px;
-            font-size: 1.4em;
+            font-size: 1.2em;
             transition: color 0.3s;
         }
 
         h4 {
             color: var(--color-text);
             margin-top: 20px;
-            font-size: 1.2em;
+            font-size: 1.0em;
             transition: color 0.3s;
+        }
+
+        p {
+            color: var(--color-text);
+            font-size: 1.0em;
         }
 
         table {
@@ -116,7 +121,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        tr:nth-child(even) {
+        tr {
             background-color: var(--color-table-row-even);
             transition: background-color 0.3s;
         }
@@ -356,6 +361,12 @@
             padding-bottom: 5px;
         }
 
+        .person-name-nodetail {
+            color: var(--color-primary);
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
         .person-details {
             margin-left: 15px;
         }
@@ -557,14 +568,15 @@
             <li><a href="#section15">14. Campañas mambisas entre el 96 y el 97</a></li>
             <li><a href="#section16">15. Papel de la mujer cubana</a></li>
             <li><a href="#section17">16. Enmienda Platt</a></li>
-            <li><a href="#section18">17. Movimiento obrero, estudiantil y comunista (1920-1930)</a></li>
-            <li><a href="#section19">18. Escritos patrióticos de José Martí</a></li>
-            <li><a href="#section20">19. Acciones victoriosas del Ejército Rebelde (1957-1958)</a></li>
-            <li><a href="#section21">20. Primeras medidas del gobierno revolucionario</a></li>
-            <li><a href="#section22">21. Logros de la Revolución en diferentes sectores</a></li>
-            <li><a href="#section23">22. Política Injerencista y carácter hostil del gobierno de E.E.U.U hacia Cuba (1898-1902 y 1902-1935)</a></li>
-            <li><a href="#section24">23. Agresiones o maniobras del imperialismo yanqui hacia Cuba</a></li>
-            <li><a href="#section25">24. Colonia y Neocolonia. Características</a></li>
+            <li><a href="#sectionGobiernos">17. Gobiernos corruptos y entreguistas (1902-19_5)</a></li>
+            <li><a href="#section18">18. Movimiento obrero, estudiantil y comunista (1920-1930)</a></li>
+            <li><a href="#section19">19. Escritos patrióticos de José Martí</a></li>
+            <li><a href="#section20">10. Acciones victoriosas del Ejército Rebelde (1957-1958)</a></li>
+            <li><a href="#section21">21. Primeras medidas del gobierno revolucionario</a></li>
+            <li><a href="#section22">22. Logros de la Revolución en diferentes sectores</a></li>
+            <li><a href="#section23">23. Política Injerencista y carácter hostil del gobierno de E.E.U.U hacia Cuba (1898-1902 y 1902-1935)</a></li>
+            <li><a href="#section24">24. Agresiones o maniobras del imperialismo yanqui hacia Cuba</a></li>
+            <li><a href="#section25">25. Colonia y Neocolonia. Características</a></li>
             <h2>Caracterizaciones</h2>
             <li><a href="#sectionVal">CLICK AQUÍ</a>
             <h2>Cronología</h2>
@@ -586,7 +598,7 @@
     </div>
 
     <div class="container">
-        <h1>GUÍA DE HISTORIA DE CUBA PARA PRUEBA FINAL 9NO GRADO EN DESARROLLO</h1>
+        <h1>GUÍA DE HISTORIA DE CUBA PARA PRUEBA FINAL 9NO GRADO</h1>
         <p class="author">Autor: Fabiano García Valladares</p>
         
         <!-- Sección 1 -->
@@ -595,8 +607,12 @@
             <table class="comparison-table">
                 <tr>
                     <th>Aspectos</th>
-                    <th>Pre-Agroalfareros</th>
-                    <th>Agroalfareros</th>
+                    <th>Pre-Agroalfareros
+                        (Menos desarrollado)
+                    </th>
+                    <th>Agroalfareros
+                        (Más desarrollado)
+                    </th>
                 </tr>
                 <tr>
                     <td><strong>Aspecto físico</strong></td>
@@ -615,7 +631,12 @@
                 </tr>
                 <tr>
                     <td><strong>Manifestaciones religiosas</strong></td>
-                    <td>-</td>
+                    <td>
+                        <ul>
+                            <li>Pintaban en cuevas (arte rupestre) para ceremonias mágicas o religiosas</li>
+                            <li>Rendían culto a la naturaleza</li>
+                        </ul>
+                    </td>
                     <td>
                         <ul>
                             <li>El areito parece haber sido una de esas ceremonias religiosas de carácter colectivo</li>
@@ -624,11 +645,16 @@
                         </ul>
                     </td>
                 </tr>
+                <tr>
+                    <td><strong>Viviendas</strong></td>
+                    <td>Vivían en cuevas cerca de los ríos</td>
+                    <td>Vivían en bohíos caneyes y barbacoas en un espacio abierto llamado batey</td>
+                </tr>
             </table>
             
             <div class="conclusion">
                 <h3>Conclusiones:</h3>
-                <p>El grupo de mayor desarrollo son los agroalfareros, ya que sus instrumentos de trabajo tenían un mejor acabado y mayor perfeccionamiento, y además se dedicaban a la agricultura, a la confección de objetos de cerámica, a la recolección, caza y pesca; mientras los pre-agroalfareros tenían instrumentos de trabajo más toscos, rústicos y rudimentarios, y se dedicaban solamente a la recolección, caza y pesca. En cuanto a las manifestaciones religiosas, en los agroalfareros el areíto es la ceremonia religiosa fundamental.</p>
+                <p>El grupo de mayor desarrollo son los agroalfareros, ya que sus instrumentos de trabajo tenían un mejor acabado y mayor perfeccionamiento, y además se dedicaban a la agricultura, a la confección de objetos de cerámica, a la recolección, caza y pesca; mientras los pre-agroalfareros tenían instrumentos de trabajo más toscos, rústicos y rudimentarios, y se dedicaban solamente a la recolección, caza y pesca. Además, los agroalfareros construían sus propias viviendas, mientras que los pre-agroalfareros vivían en cuevas.</p>
             </div>
         </div>
         
@@ -689,6 +715,9 @@
                         <li>Las autoridades españolas tuvieron que suspender las medidas de estanco por obligación.</li>
                     </ul>
                 </div>
+            </div>
+            <div class="person-card">
+                <div class="person-name-nodetail">Sublevación de Aponte</div>
             </div>
         </div>
         
@@ -756,21 +785,22 @@
             
             <h3>Anexionismo</h3>
             <div class="person-card">
-                <div class="person-name">Narciso López</div>
+                <div class="person-name">Narciso López (Anexionista)</div>
                 <div class="person-details">
-                    <p><strong>Carácter:</strong></p>
+                    <h4>Carácter:</h4>
                     <ul>
                         <li>Mezquino</li>
                         <li>Antipatriótico</li>
                         <li>Negativo</li>
                         <li>Anticubano</li>
                     </ul>
-                    <p><strong>Objetivos:</strong></p>
+                    <h4>Objetivos:</h4>
                     <ul>
                         <li>Intereses económicos</li>
                         <li>Afán de mantener la esclavitud</li>
                         <li>Deseaban que Cuba dejase de pertenecer a España para pertenecer a los E.E.U.U.</li>
                     </ul>
+                    <h4>Figura que se opone al anexionismo: José Antonio Saco</h4>
                 </div>
             </div>
         </div>
@@ -778,28 +808,29 @@
         <!-- Sección 5 -->
         <div class="section" id="section5">
             <h2>5. Vigencia del ideario martiano</h2>
+            <p><strong>Importante🚨: </strong>Dominar fragmentos de cada uno</p>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Independentismo</h4>
+                        <p><strong>Independentismo:</strong> págs 122-123 L/T</p>
                         <p>Poema "Abdala"</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Antimperialismo</h4>
+                        <p><strong>Antimperialismo: </strong> pág 124 L/T</p>
                         <p>Carta a su amigo Manuel Mercado</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Latinoamericanismo</h4>
+                        <p><strong>Latinoamericanismo: </strong>págs 123-124 L/T</p>
                         <p>"(...) ¿A dónde va la América...?"</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Antirracismo</h4>
+                        <p><strong>Antirracismo:</strong> pág 124 L/T</p>
                         <p>Poema "Mi raza"</p>
                     </div>
                 </div>
@@ -901,7 +932,7 @@
             
             <div class="conclusion">
                 <h3>¿Por qué la Asamblea de Jimaguayú fue superior a la de Guáimaro?</h3>
-                <p>La Asamblea de Jimaguayú se desarrolló el 16 de septiembre de 1895. En ella supieron encontrar formas adecuadas para superar el viejo debate civil y militar iniciado en Guáimaro. Se organizó debidamente para las condiciones de la guerra. Se estableció un Consejo de Gobierno con facultades administrativas y legislativas dando autonomía al mando militar, mientras que, en Guáimaro, se creó un gobierno civil dirigido por Agramonte que dependía del ejército, la asamblea tenía una vigencia de dos años y para sustituirla había que convocar una Asemblea de Representantes. La Asamblea de Jimaguayú fue un reflejo de madurez y profundización del pensamiento revolucionario, demostró que la Guerra del 95 fue superior a la del 68.</p>
+                <p>La Asamblea de Jimaguayú se desarrolló el 16 de septiembre de 1895. En ella supieron encontrar formas adecuadas para superar el viejo debate civil y militar iniciado en Guáimaro. Se organizó debidamente para las condiciones de la guerra. Se estableció un Consejo de Gobierno con facultades administrativas y legislativas dando autonomía al mando militar, mientras que, en Guáimaro, se creó un gobierno civil dirigido por Agramonte que dependía del ejército, la asamblea tenía una vigencia de dos años y para sustituirla había que convocar una Asamblea de Representantes. La Asamblea de Jimaguayú fue un reflejo de madurez y profundización del pensamiento revolucionario, demostró que la Guerra del 95 fue superior a la del 68.</p>
             </div>
         </div>
         
@@ -930,7 +961,7 @@
             </div>
         </div>
 
-    <!-- Sección 11 -->
+    <!-- Sección 10 -->
     <div class="section" id="section11">
         <h2>10. Manifiesto de Montecristi</h2>
         <ul>
@@ -944,9 +975,9 @@
     <div class="section" id="section12">
         <h2>11. Importancia histórica de la Invasión a Occidente (Guerra del 68)</h2>
         <ul>
-            <li>...</li>
-            <li>...</li>
-            <li>...</li>
+            <li>Marcó el inicio de un movimiento más amplio hacia la independencia cubana, que se desarrollaría en las guerras posteriores</li>
+            <li>Aunque terminó en un acuerdo que no logró la independencia total, sentó las bases para futuras reformas sociales y políticas en Cuba</li>
+            <li>La experiencia de esta invasión enseñó lecciones valiosas a los cubanos sobre organización militar y estrategia política que se utilizaría en conflictos posteriores</li>
         </ul>
     </div>
 
@@ -1249,10 +1280,26 @@
                 <li><strong>20/05/1902:</strong> Surge la República Neocolonial. Quedamos atados de pies y manos a E.E.U.U. No teníamos soberanía ni independencia ni un himno declarado oficialmente.</li>
             </ul>
         </div>
+
+        <!-- Sección 17 -->
+        <div class="section" id="sectionGobiernos">
+            <h2>17. Gobiernos Corruptos y Entreguistas. (1902-1925) Caracterizar uno de ellos: </h2>
+            <h3><li>Fraudes electorales</li></h3>
+            <div class="person-card">
+                <div class="person-name">El juego y otros vicios: </div>
+                <div class="person-details">
+                    <ul>
+                        <li>La lotería nacional había sido restablecida, este juego de dinero controlado por el Estado, sirvió para prostituir y explotar al pueblo.</li>
+                        <li>El gobierno en lugar de tomar medidas que mejoraran la vida y costumbres del pueblo, fomentaba el vicio.</li>
+                        <li>Esto contribuía a la degradación de la sociedad cubana.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         
         <!-- Sección 18 -->
         <div class="section" id="section18">
-            <h2>17. Labor desplegada por las principales organizaciones y personalidades del movimiento obrero, estudiantil y comunista en la década de 1920 y 1930</h2>
+            <h2>18. Labor desplegada por las principales organizaciones y personalidades del movimiento obrero, estudiantil y comunista en la década de 1920 y 1930</h2>
             
             <h3>1. Movimiento Estudiantil</h3>
             
@@ -1329,7 +1376,7 @@
         
         <!-- Sección 19 -->
         <div class="section" id="section19">
-            <h2>18. Escritos patrióticos de José Martí</h2>
+            <h2>19. Escritos patrióticos de José Martí</h2>
             
             <div class="person-card">
                 <div class="person-name">•	Céspedes (Visión Martiana)</div>
@@ -1356,19 +1403,19 @@
             </div>
 
             <div class="person-card">
-                <div class="person-name">•	Antonio Maceo</div>
+                <div class="person-name-nodetail">•	Antonio Maceo</div>
             </div>
 
             <div class="person-card">
-                <div class="person-name">•	Asamblea de Guáimaro</div>
+                <div class="person-name-nodetail">•	Asamblea de Guáimaro</div>
             </div>
 
             <div class="person-card">
-                <div class="person-name">•	El General Gómez</div>
+                <div class="person-name-nodetail">•	El General Gómez</div>
             </div>
 
             <div class="person-card">
-                <div class="person-name">•	La madre de los Maceo (Mariana Grajales)</div>
+                <div class="person-name-nodetail">•	La madre de los Maceo (Mariana Grajales)</div>
             </div>
             
             <div class="person-card">
@@ -1379,7 +1426,7 @@
             </div>
 
             <div class="person-card">
-                <div class="person-name">•	Conversación con un hombre de la guerra (Ignacio Agramonte)</div>
+                <div class="person-name-nodetail">•	Conversación con un hombre de la guerra (Ignacio Agramonte)</div>
             </div>
 
             <h3>Importante🚨:</h3>
@@ -1388,7 +1435,7 @@
         
         <!-- Sección 20 -->
         <div class="section" id="section20">
-            <h2>19. Acciones victoriosas del Ejército Rebelde (1957-1958)</h2>
+            <h2>20. Acciones victoriosas del Ejército Rebelde (1957-1958)</h2>
             
             <div class="person-card">
                 <div class="person-name">Batalla de Guisa (20-30/11/1958)</div>
@@ -1428,7 +1475,7 @@
         
         <!-- Sección 21 -->
         <div class="section" id="section21">
-            <h2>20. Primeras medidas del gobierno revolucionario</h2>
+            <h2>21. Primeras medidas del gobierno revolucionario</h2>
             <ul>
                 <li>Fueron reintegrados a sus puestos de trabajo los obreros despedidos durante la tiranía.</li>
                 <li>El 3 de marzo se dispone la intervención de la llamada Compañía Cubana de Teléfonos, monopolio yanqui.</li>
@@ -1438,7 +1485,7 @@
         
         <!-- Sección 22 -->
         <div class="section" id="section22">
-            <h2>21. Logros de la Revolución en diferentes sectores</h2>
+            <h2>22. Logros de la Revolución en diferentes sectores</h2>
             
             <h3>•	Educación</h3>
             <ul>
@@ -1467,7 +1514,7 @@
 
         <!-- Sesión 23 -->
         <div class="section" id="section23">
-            <h2>22. Política Injerencista y carácter hostil del gobierno de E.E.U.U hacia Cuba durante el período de 1898 a 1902 y de 1902 a 1935</h2>
+            <h2>23. Política Injerencista y carácter hostil del gobierno de E.E.U.U hacia Cuba durante el período de 1898 a 1902 y de 1902 a 1935</h2>
             <div class="person-card">
                 <div class="person-name">•	Política de la Doctrina Monroe</div>
                 <div class="person-details">
@@ -1507,7 +1554,7 @@
 
         <!-- Sesión 24 -->
         <div class="section" id="section24">
-            <h2>23. Agresiones o maniobras del imperialismo yanqui hacia Cuba</h2>
+            <h2>24. Agresiones o maniobras del imperialismo yanqui hacia Cuba</h2>
             <ul>
                 <li>Los fondos bancarios cubanos depositados en los E.E.U.U. fueron embargados</li>
                 <li>Declaraban la reducción del suministro de petróleo norteamericano, de equipos industriales y otras mercancías comestibles</li>
@@ -1517,7 +1564,7 @@
          
         <!-- Sesión 25 -->
         <div class="section" id="section25">
-            <h2>24. Características de la Colonia y Neocolonia</h2>
+            <h2>25. Características de la Colonia y Neocolonia</h2>
             
             <h3>•	Colonia</h3> 
             <ul>
@@ -1541,7 +1588,7 @@
                 <div class="person-details">
                     <p>• Fue el iniciador de nuestras luchas por la Independencia.</p>
                     <p>• Era un revolucionario capaz de darlo todo por la causa revolucionaria como el sacrificio de su hijo Óscar que fue fusilado por los españoles.</p>
-                    <p>• Participó en un sinfín de actividades revolucionarias como el ataque a Yara, la toma de Bayamo y el alzamiento en el ingenio La Demajagua.</p>
+                    <p>• Participó en diversas actividades revolucionarias como el ataque a Yara, la toma de Bayamo y el alzamiento en el ingenio La Demajagua.</p>
                     <p>• Fue mayor general del ejército libertador y primer presidente de la república en armas.</p>
                 </div>
             </div>
@@ -1549,10 +1596,10 @@
             <div class="person-card">
                 <div class="person-name">Ignacio Agramonte (23/12/1841-11/5/1873)</div>
                 <div class="person-details">
-                    <p>• Agramonte hizo posible eliminar el regionalismo uniendo a los camagüeyanos y a los villareños.</p>
+                    <p>• Hizo posible eliminar el regionalismo uniendo a los camagüeyanos y a los villareños.</p>
                     <p>• Influyó en la Invasión a Occidente.</p>
                     <p>• Fue invitado de honor a la Asamblea de Guáimaro.</p>
-                    <p>• Rescató al brigadier Julio Sanguily.</p>
+                    <p>• Lideró el rescate del brigadier Julio Sanguily.</p>
                 </div>
             </div>
         
@@ -1610,7 +1657,7 @@
             <div class="person-card">
                 <div class="person-name">Félix Varela y Morales (1788-1853)</div>
                 <div class="person-details">
-                    <p>• Prestigioso sacerdote profesor del Seminario de San Carlos, quien se opuso a la enseñanza sin razonamiento lógico y científico, lo que le hizo ganar popularidad y prestigio ante la juventud habanera de la época.</p>
+                    <p>• Prestigioso sacerdote, profesor del Seminario de San Carlos, quien se opuso a la enseñanza sin razonamiento lógico y científico, lo que le hizo ganar popularidad y prestigio ante la juventud habanera de la época.</p>
                     <p>• Varela adoptó inicialmente una posición reformista.</p>
                     <p>• Fue diputado a la Corte en 1820 y desde esa posición comprendió la ineficacia del reformismo.</p>
                 </div>
@@ -1660,7 +1707,7 @@
                 <div class="person-name">Ernesto "Che" Guevara (1928-1967)</div>
                 <div class="person-details">
                     <p>• Raúl y Fidel lo invitan a unirse al Movimiento 26 de julio.</p>
-                    <p>• Participa en el combate "Alegría de Pío".</p>
+                    <p>• Protagoniza la Batalla de Santa Clara en 1958</p>
                     <p>• Participa en el combate "La Plata" y el combate del "Uvero".</p>
                     <p>• Funda el periódico "El Cubano Libre".</p>
                 </div>
@@ -1682,6 +1729,7 @@
                     <p>• Es conocido por ser una de las personalidades más paradigmáticas de la Revolución Cubana contra la dictadura de Fulgencio Batista.</p>
                     <p>• Participa en innumerables combates como el combate del Uvero, donde ya ostenta los grados de teniente y dirige un pelotón.</p>
                     <p>• En la lucha armada en la Sierra Maestra, por su accionar de combate, se le otorga el rango de Capitán del Ejército Rebelde.</p>
+                    <p>• Lidera la Batalla de Santa Clara en 1958</p>
                 </div>
             </div>
         
@@ -1699,6 +1747,7 @@
         <!-- Sección de Cronología -->
         <div class="section" id="sectionCron">
             <h2>Cronología de Hechos (1492-1962)</h2>
+            <p><strong>Importante🚨:</strong> <i>Caracterizar o argumentar importancia histórica de <u>TODOS</u> los hechos destacados en clases</i></p>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">12/10/1492: Descubrimiento de América</div>
@@ -2134,6 +2183,7 @@
     </script>
 </body>
 </html>
+
 <!--- Nota Oculta
 TG9ncmFzdGUgZGVzY2lmcmFyIGVsIG1lbnNhamUhISEhISEhIApPamFsw6EgcXVlIG5vIHBvciBDaGF0R1BUCkFIIGxvIGhpY2lzdGUgY29uIElBPwpJUDogMTAuNDUuMzcuMTc1IFlhIGVzdMOhcyBoYWNrZWFkbyEKbmEgbWVudGlyYTogR3VpYSBkZSBIaXN0cm9pYSBQRiA5bm8gcGFyYSBpbXByaW1pcjogUjNYRHJXRlRaV055WlhSaFVHRnlZVWx0Y0hKcGJXbHkuZG9jeApCdWVuYSBzdWVydGUhISAKVGlwOiBQZWdhIGVzIHRleHRvIHJhcm8gZW4gbGEgaXAgZGUgbGEgcMOhZ2luYSEKRWo6IHdlYi51cmwuaW8vZ3VpYWhpc3RvcmlhY3ViYXBmL2NvZGlnb3Jhcm9kZWFycmliYQ==
 -->
